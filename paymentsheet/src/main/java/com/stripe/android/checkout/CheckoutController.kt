@@ -20,8 +20,14 @@ class CheckoutController(
     savedStateHandle: SavedStateHandle,
     resultCallback: ResultCallback,
 ) {
-    private val _checkoutSession = MutableStateFlow<CheckoutSession?>(null)
-    val checkoutSession: StateFlow<CheckoutSession?> = _checkoutSession.asStateFlow()
+    val checkoutSession: StateFlow<CheckoutSession?> =
+        MutableStateFlow<CheckoutSession?>(null).asStateFlow()
+
+    val isLoading: StateFlow<Boolean> =
+        MutableStateFlow(false).asStateFlow()
+
+    val paymentOption: StateFlow<PaymentElement.PaymentOptionDisplayData?> =
+        MutableStateFlow<PaymentElement.PaymentOptionDisplayData?>(null).asStateFlow()
 
     suspend fun configure(
         checkoutSessionClientSecret: String,
