@@ -3,6 +3,9 @@
 NEXT_VERSION_BUMP: PATCH
 ## XX.XX.XX - 20XX-XX-XX
 
+### Connect
+* [CHANGED] The Payments and Payouts embedded components are now generally available. Removed `@PreviewConnectSDK` annotations and refactored `PaymentsProps` to use the builder pattern.
+
 ## 23.11.1 - 2026-06-30
 
 ### PaymentSheet
